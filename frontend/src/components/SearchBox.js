@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Button, Col } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 import '../index.css'
 
 const SearchBox = ({ history }) => {
@@ -32,23 +32,3 @@ const SearchBox = ({ history }) => {
 }
 
 export default SearchBox
-
-// .form-inline {
-//   width: 100%;
-// }
-
-// .form-group {
-//   width: 90%;
-// }
-
-// .input-group {
-//   width: 90% !important;
-// }
-
-// .form-control {
-//   width: 50% !important;
-// }
-
-// span.input-group-addon {
-//   width: 50px !important;
-// }

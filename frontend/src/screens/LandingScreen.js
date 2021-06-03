@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
@@ -9,7 +8,7 @@ import Paginate from '../components/Paginate'
 
 import { listProducts } from '../redux/product/action'
 
-const HomeScreen = ({ match }) => {
+const LandingScreen = ({ match }) => {
   const keyword = match.params.keyword
 
   const pageNumber = match.params.pageNumber || 1
@@ -25,7 +24,6 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
-      <h1>Latest Products</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -50,4 +48,4 @@ const HomeScreen = ({ match }) => {
   )
 }
 
-export default HomeScreen
+export default LandingScreen

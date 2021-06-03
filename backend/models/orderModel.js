@@ -26,10 +26,6 @@ const orderSchema = mongoose.Schema(
       postalCode: { type: String, required: true },
       country: { type: String, required: true },
     },
-    paymentMethod: {
-      type: String,
-      required: true,
-    },
     paymentResult: {
       id: { type: String },
       status: { type: String },
@@ -50,22 +46,6 @@ const orderSchema = mongoose.Schema(
       type: Number,
       required: true,
       default: 0.0,
-    },
-    isPaid: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
-    paidAt: {
-      type: Date,
-    },
-    isDelivered: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
-    deliveredAt: {
-      type: Date,
     },
   },
   {

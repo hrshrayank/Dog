@@ -2,16 +2,16 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
-import HomeScreen from './screens/HomeScreen'
-import ProductScreen from './screens/ProductScreen'
+import LandingScreen from './screens/LandingScreen'
+import SingleProduct from './screens/SingleProduct'
 import CartScreen from './screens/CartScreen'
-import LoginScreen from './screens/LoginScreen'
-import RegisterScreen from './screens/RegisterScreen'
+import LoginPage from './screens/LoginPage'
+import NewUserPage from './screens/NewUserPage'
 
-import ShippingScreen from './screens/ShippingScreen'
-import PaymentScreen from './screens/PaymentScreen'
-import PlaceOrderScreen from './screens/PlaceOrderScreen'
-import OrderScreen from './screens/OrderScreen'
+import AddressPage from './screens/AddressPage'
+
+import ShippingPage from './screens/ShippingPage'
+import ConfirmPage from './screens/ConfirmPage'
 
 const App = () => {
   return (
@@ -19,24 +19,24 @@ const App = () => {
       <Header />
       <main className='py-3'>
         <Container>
-          <Route path='/order/:id' component={OrderScreen} />
-          <Route path='/shipping' component={ShippingScreen} />
-          <Route path='/payment' component={PaymentScreen} />
-          <Route path='/placeorder' component={PlaceOrderScreen} />
-          <Route path='/login' component={LoginScreen} />
-          <Route path='/register' component={RegisterScreen} />
+          <Route path='/confirm' component={ConfirmPage} />
+          <Route path='/shipping' component={AddressPage} />
 
-          <Route path='/product/:id' component={ProductScreen} />
+          <Route path='/placeorder' component={ShippingPage} />
+          <Route path='/login' component={LoginPage} />
+          <Route path='/register' component={NewUserPage} />
+
+          <Route path='/product/:id' component={SingleProduct} />
           <Route path='/cart/:id?' component={CartScreen} />
 
-          <Route path='/search/:keyword' component={HomeScreen} exact />
-          <Route path='/page/:pageNumber' component={HomeScreen} exact />
+          <Route path='/search/:keyword' component={LandingScreen} exact />
+          <Route path='/page/:pageNumber' component={LandingScreen} exact />
           <Route
             path='/search/:keyword/page/:pageNumber'
-            component={HomeScreen}
+            component={LandingScreen}
             exact
           />
-          <Route path='/' component={HomeScreen} exact />
+          <Route path='/' component={LandingScreen} exact />
         </Container>
       </main>
     </Router>

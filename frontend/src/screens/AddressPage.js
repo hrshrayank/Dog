@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../components/FormContainer'
 
 import { saveShippingAddress } from '../redux/cart/action'
+import { savePaymentMethod } from '../redux/cart/action'
 
-const ShippingScreen = ({ history }) => {
+const AddressPage = ({ history }) => {
   const cart = useSelector((state) => state.cart)
   const { shippingAddress } = cart
 
@@ -19,12 +20,13 @@ const ShippingScreen = ({ history }) => {
   const submitHandler = (e) => {
     e.preventDefault()
     dispatch(saveShippingAddress({ address, city, postalCode, country }))
-    history.push('/payment')
+    dispatch(savePaymentMethod('Online'))
+    history.push('/placeorder')
   }
 
   return (
     <FormContainer>
-      <h1>Shipping</h1>
+      <h1>Address</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
           <Form.Label>Address</Form.Label>
@@ -78,4 +80,4 @@ const ShippingScreen = ({ history }) => {
   )
 }
 
-export default ShippingScreen
+export default AddressPage
