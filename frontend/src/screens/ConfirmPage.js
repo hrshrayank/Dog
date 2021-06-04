@@ -6,19 +6,14 @@ function ConfirmPage() {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
   return (
-    <Col>
+    <Col md={5} className='m-auto'>
       <Row>
-        <h3>
-          Thanks for choosing DogShop, {userInfo.name} Here are your order
-          details
-        </h3>
-        <p class='lead'>
-          <strong>Please check your email</strong> for further instructions on
-          how to complete your account setup.
-        </p>
+        <h3>Thanks for choosing DogShop, {userInfo.name}</h3>
+        <p class='lead'>Please check your email for order details</p>
 
         <p>
-          Having trouble? <a href='mailto:hrshrayank77@gmail.com'>Contact us</a>
+          Having trouble to find the mail ?{' '}
+          <a href='mailto:hrshrayank77@gmail.com'>Contact us</a>
         </p>
         <p class='lead'>
           <a class='btn ' href='/' role='button'>
